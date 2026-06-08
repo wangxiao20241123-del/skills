@@ -1,0 +1,10 @@
+{
+  "source": "mattpocock",
+  "package": "mattpocock/skills",
+  "repo": "https://github.com/mattpocock/skills.git",
+  "ref": "main",
+  "skill": "improve-codebase-architecture",
+  "upstreamPath": "upstream/mattpocock/skills/engineering/improve-codebase-architecture",
+  "customPath": "skills/engineering/improve-codebase-architecture",
+  "syncedAt": "2026-06-08T07:02:20.468Z"
+}

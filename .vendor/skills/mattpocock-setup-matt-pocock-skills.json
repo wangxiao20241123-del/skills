@@ -1,0 +1,10 @@
+{
+  "source": "mattpocock",
+  "package": "mattpocock/skills",
+  "repo": "https://github.com/mattpocock/skills.git",
+  "ref": "main",
+  "skill": "setup-matt-pocock-skills",
+  "upstreamPath": "upstream/mattpocock/skills/engineering/setup-matt-pocock-skills",
+  "customPath": "skills/engineering/setup-matt-pocock-skills",
+  "syncedAt": "2026-06-08T07:02:20.463Z"
+}

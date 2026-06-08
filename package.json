@@ -1,0 +1,11 @@
+{
+  "name": "luxiaofei-skills",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync:upstream": "node scripts/sync-upstream.mjs",
+    "diff:skill": "node scripts/diff-skill.mjs",
+    "list:installable": "npx skills@latest add . --list --agent codex --yes",
+    "install:local": "npx skills@latest add . --agent codex --skill setup-matt-pocock-skills --skill grill-with-docs --skill diagnose --skill tdd --skill improve-codebase-architecture --skill zoom-out --yes"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "source": "mattpocock",
+  "package": "mattpocock/skills",
+  "repo": "https://github.com/mattpocock/skills.git",
+  "ref": "main",
+  "skill": "zoom-out",
+  "upstreamPath": "upstream/mattpocock/skills/engineering/zoom-out",
+  "customPath": "skills/engineering/zoom-out",
+  "syncedAt": "2026-06-08T07:02:20.468Z"
+}

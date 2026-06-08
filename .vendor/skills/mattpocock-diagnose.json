@@ -1,0 +1,10 @@
+{
+  "source": "mattpocock",
+  "package": "mattpocock/skills",
+  "repo": "https://github.com/mattpocock/skills.git",
+  "ref": "main",
+  "skill": "diagnose",
+  "upstreamPath": "upstream/mattpocock/skills/engineering/diagnose",
+  "customPath": "skills/engineering/diagnose",
+  "syncedAt": "2026-06-08T07:02:20.466Z"
+}
