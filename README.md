@@ -31,6 +31,10 @@ matt/<skill>/...         # 自定义发布版；从这里安装
 - 单个 skill 用 GitHub tree 子目录 URL 安装。
 - 添加、更新、删除都使用 `npx skills@latest`。
 
+补充文档：
+
+- [`npx skills@latest add` source 识别规则](docs/skills-add-source-rules.md)
+
 ## 添加 skill
 
 安装 `matt` 子目录里的自定义 skill：
