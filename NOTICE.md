@@ -1,13 +1,13 @@
 # Notice
 
-This repository vendors and customizes agent skills from upstream repositories.
+本仓库保存上游 agent skills 的原版和自定义发布版。
 
-Current upstream source:
+当前来源：
 
-- `mattpocock/skills`
-  - Repository: `https://github.com/mattpocock/skills`
-  - License: MIT
-  - Upstream snapshot path: `upstream/mattpocock/`
-  - Published/customized path: `skills/`
+- `matt/`
+  - 上游仓库：`https://github.com/mattpocock/skills`
+  - 上游许可证：MIT
+  - 上游原版路径：`upstream/matt/skills/...`
+  - 自定义发布路径：`matt/skills/...`
 
-The upstream MIT license text is preserved in the upstream snapshot when synced.
+安装、更新、删除使用 `npx skills@latest`。
