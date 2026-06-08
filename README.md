@@ -14,13 +14,13 @@
 - 上游：`mattpocock/skills`
 - 本仓库来源名：`matt`
 - 上游原版：`upstream/matt/skills/...`
-- 自定义发布版：`matt/skills/...`
+- 自定义发布版：`matt/<skill>/...`
 
 ## 目录
 
 ```text
 upstream/matt/skills/... # mattpocock/skills 原版；用于对照和合并上游更新
-matt/skills/...          # 自定义发布版；从这里安装
+matt/<skill>/...         # 自定义发布版；从这里安装
 ```
 
 规则：
@@ -33,23 +33,51 @@ matt/skills/...          # 自定义发布版；从这里安装
 
 ## 添加 skill
 
-安装单个 skill：
+安装 `matt` 子目录里的自定义 skill：
 
 ```bash
-npx skills@latest add https://github.com/wangxiao20241123-del/skills/tree/main/matt/skills/engineering/improve-codebase-architecture \
+npx skills@latest add https://github.com/wangxiao20241123-del/skills/tree/main/matt \
+  --agent codex \
+  --skill matt-setup \
+  --skill matt-grill \
+  --skill matt-diagnose \
+  --skill matt-tdd \
+  --skill matt-arch \
+  --skill matt-zoom \
+  --yes
+```
+
+安装后的 skill 名：
+
+```text
+setup-matt-pocock-skills        -> matt-setup
+grill-with-docs                 -> matt-grill
+diagnose                        -> matt-diagnose
+tdd                             -> matt-tdd
+improve-codebase-architecture   -> matt-arch
+zoom-out                        -> matt-zoom
+```
+
+如果本机已经安装过上游原名，先移除旧名字：
+
+```bash
+npx skills@latest remove setup-matt-pocock-skills grill-with-docs diagnose tdd improve-codebase-architecture zoom-out \
   --agent codex \
   --yes
 ```
 
-其他 skill 同理：
+再安装本仓库自定义版：
 
-```text
-https://github.com/wangxiao20241123-del/skills/tree/main/matt/skills/engineering/setup-matt-pocock-skills
-https://github.com/wangxiao20241123-del/skills/tree/main/matt/skills/engineering/grill-with-docs
-https://github.com/wangxiao20241123-del/skills/tree/main/matt/skills/engineering/diagnose
-https://github.com/wangxiao20241123-del/skills/tree/main/matt/skills/engineering/tdd
-https://github.com/wangxiao20241123-del/skills/tree/main/matt/skills/engineering/improve-codebase-architecture
-https://github.com/wangxiao20241123-del/skills/tree/main/matt/skills/engineering/zoom-out
+```bash
+npx skills@latest add https://github.com/wangxiao20241123-del/skills/tree/main/matt \
+  --agent codex \
+  --skill matt-setup \
+  --skill matt-grill \
+  --skill matt-diagnose \
+  --skill matt-tdd \
+  --skill matt-arch \
+  --skill matt-zoom \
+  --yes
 ```
 
 ## 更新 skill
@@ -63,7 +91,7 @@ npx skills@latest update --yes
 只更新某个 skill：
 
 ```bash
-npx skills@latest update improve-codebase-architecture --yes
+npx skills@latest update matt-arch --yes
 ```
 
 只更新全局安装的 skill：
@@ -77,7 +105,7 @@ npx skills@latest update --global --yes
 删除某个 skill：
 
 ```bash
-npx skills@latest remove improve-codebase-architecture \
+npx skills@latest remove matt-arch \
   --agent codex \
   --yes
 ```
@@ -85,7 +113,7 @@ npx skills@latest remove improve-codebase-architecture \
 删除全局安装的某个 skill：
 
 ```bash
-npx skills@latest remove --global improve-codebase-architecture \
+npx skills@latest remove --global matt-arch \
   --agent codex \
   --yes
 ```
@@ -102,20 +130,20 @@ npx skills@latest remove
 
 ```text
 upstream/<source-name>/skills/<category>/<skill-name>/SKILL.md
-<source-name>/skills/<category>/<skill-name>/SKILL.md
+<source-name>/<short-skill-name>/SKILL.md
 ```
 
 例子：
 
 ```text
 upstream/another/skills/engineering/some-skill/SKILL.md
-another/skills/engineering/some-skill/SKILL.md
+another/some-skill/SKILL.md
 ```
 
 安装方式仍然是 GitHub tree 子目录：
 
 ```bash
-npx skills@latest add https://github.com/wangxiao20241123-del/skills/tree/main/another/skills/engineering/some-skill \
+npx skills@latest add https://github.com/wangxiao20241123-del/skills/tree/main/another \
   --agent codex \
   --yes
 ```

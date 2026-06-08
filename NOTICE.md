@@ -8,6 +8,6 @@
   - 上游仓库：`https://github.com/mattpocock/skills`
   - 上游许可证：MIT
   - 上游原版路径：`upstream/matt/skills/...`
-  - 自定义发布路径：`matt/skills/...`
+  - 自定义发布路径：`matt/<skill>/...`
 
 安装、更新、删除使用 `npx skills@latest`。
