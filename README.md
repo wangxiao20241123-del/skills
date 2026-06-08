@@ -1,4 +1,4 @@
-# Luxiaofei Skills
+# Skills
 
 这个仓库用于维护上游 skill 的自定义发布版。
 
@@ -35,91 +35,112 @@ matt/<skill>/...         # 自定义发布版；从这里安装
 
 - [`npx skills@latest add` source 识别规则](docs/skills-add-source-rules.md)
 
-## 添加 skill
+## 常用命令
 
-安装 `matt` 子目录里的自定义 skill：
-
-```bash
-npx skills@latest add https://github.com/wangxiao20241123-del/skills/tree/main/matt \
-  --agent codex \
-  --skill matt-setup \
-  --skill matt-grill \
-  --skill matt-diagnose \
-  --skill matt-tdd \
-  --skill matt-arch \
-  --skill matt-zoom \
-  --yes
-```
-
-安装后的 skill 名：
-
-```text
-setup-matt-pocock-skills        -> matt-setup
-grill-with-docs                 -> matt-grill
-diagnose                        -> matt-diagnose
-tdd                             -> matt-tdd
-improve-codebase-architecture   -> matt-arch
-zoom-out                        -> matt-zoom
-```
-
-如果本机已经安装过上游原名，先移除旧名字：
+### 查看
 
 ```bash
-npx skills@latest remove setup-matt-pocock-skills grill-with-docs diagnose tdd improve-codebase-architecture zoom-out \
-  --agent codex \
-  --yes
+npx skills@latest list --agent codex
+npx skills@latest list --global --agent codex
+npx skills@latest list --agent codex --json
 ```
 
-再安装本仓库自定义版：
+### 安装
+
+查看 source 里有哪些 skill，不安装：
 
 ```bash
-npx skills@latest add https://github.com/wangxiao20241123-del/skills/tree/main/matt \
-  --agent codex \
-  --skill matt-setup \
-  --skill matt-grill \
-  --skill matt-diagnose \
-  --skill matt-tdd \
-  --skill matt-arch \
-  --skill matt-zoom \
-  --yes
+npx skills@latest add <source> --list --agent codex --yes
 ```
 
-## 更新 skill
+安装 source 里全部 skill：
 
-更新所有已安装 skill：
+```bash
+npx skills@latest add <source> --agent codex --skill '*' --yes
+```
+
+安装 source 里的指定 skill：
+
+```bash
+npx skills@latest add <source> --agent codex --skill <skill-name> --yes
+```
+
+安装多个指定 skill：
+
+```bash
+npx skills@latest add <source> --agent codex --skill <skill-a> --skill <skill-b> --yes
+```
+
+安装到全局：
+
+```bash
+npx skills@latest add <source> --global --agent codex --skill <skill-name> --yes
+```
+
+`<source>` 可以是本地目录、GitHub repo、GitHub tree 子目录。细节见 [`npx skills@latest add` source 识别规则](docs/skills-add-source-rules.md)。
+
+### 更新
+
+更新当前项目全部已安装 skill：
 
 ```bash
 npx skills@latest update --yes
 ```
 
-只更新某个 skill：
+更新当前项目某个 skill：
 
 ```bash
-npx skills@latest update matt-arch --yes
+npx skills@latest update <skill-name> --yes
 ```
 
-只更新全局安装的 skill：
+更新当前项目多个 skill：
+
+```bash
+npx skills@latest update <skill-a> <skill-b> --yes
+```
+
+更新全局全部 skill：
 
 ```bash
 npx skills@latest update --global --yes
 ```
 
-## 删除 skill
-
-删除某个 skill：
+更新全局某个 skill：
 
 ```bash
-npx skills@latest remove matt-arch \
-  --agent codex \
-  --yes
+npx skills@latest update --global <skill-name> --yes
 ```
 
-删除全局安装的某个 skill：
+### 删除
+
+删除当前项目某个 skill：
 
 ```bash
-npx skills@latest remove --global matt-arch \
-  --agent codex \
-  --yes
+npx skills@latest remove <skill-name> --yes
+```
+
+删除当前项目多个 skill：
+
+```bash
+npx skills@latest remove <skill-a> <skill-b> --yes
+```
+
+删除当前项目全部 skill：
+
+```bash
+npx skills@latest remove --all
+```
+
+删除全局某个 skill：
+
+```bash
+npx skills@latest remove --global <skill-name> --yes
+```
+
+删除全局全部 skill：
+
+```bash
+npx skills@latest remove --global --all
 ```
 
 交互式删除：
@@ -127,6 +148,8 @@ npx skills@latest remove --global matt-arch \
 ```bash
 npx skills@latest remove
 ```
+
+注意：`remove` 按 skill 名删除，不按 GitHub 仓库 URL 或 source 子目录删除。如果要删除某个 source 安装的一组 skill，先用 `list` 找到名字，再显式列出这些 skill 名。
 
 ## 新增上游仓库子目录
 

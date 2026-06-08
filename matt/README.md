@@ -9,7 +9,7 @@ upstream/matt/skills/... # 上游原版
 matt/<skill>/...         # 自定义发布版
 ```
 
-## 安装
+## 安装本目录
 
 ```bash
 npx skills@latest add https://github.com/wangxiao20241123-del/skills/tree/main/matt \
