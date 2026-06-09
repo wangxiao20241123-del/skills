@@ -4,13 +4,11 @@ When the user wants to explore alternative interfaces for a chosen deepening can
 
 Uses the vocabulary in [LANGUAGE.md](LANGUAGE.md) — **module**, **interface**, **seam**, **adapter**, **leverage**.
 
-All user-facing output in this flow must be Simplified Chinese. Keep code identifiers, type names, file paths, config keys, API names, and third-party product names in their original form.
-
 ## Process
 
 ### 1. Frame the problem space
 
-Before spawning sub-agents, write a Simplified Chinese explanation of the problem space for the chosen candidate:
+Before spawning sub-agents, write a user-facing explanation of the problem space for the chosen candidate:
 
 - The constraints any new interface would need to satisfy
 - The dependencies it would rely on, and which category they fall into (see [DEEPENING.md](DEEPENING.md))
@@ -31,7 +29,7 @@ Prompt each sub-agent with a separate technical brief (file paths, coupling deta
 
 Include both [LANGUAGE.md](LANGUAGE.md) vocabulary and CONTEXT.md vocabulary in the brief so each sub-agent names things consistently with the architecture language and the project's domain language.
 
-Each sub-agent outputs in Simplified Chinese:
+Each sub-agent outputs:
 
 1. Interface (types, methods, params — plus invariants, ordering, error modes)
 2. Usage example showing how callers use it

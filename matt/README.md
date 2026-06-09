@@ -116,24 +116,28 @@ upstream/matt/skills/engineering/zoom-out                        -> matt/zoom
 
 ### 6. `matt-arch` 输出中文报告
 
-`matt-arch` 基于上游 `improve-codebase-architecture`，额外要求用户可见输出默认使用简体中文。
+`matt-arch` 基于上游 `improve-codebase-architecture`。主体规则保留英文原版，只增加一条约束：生成的 HTML 报告可见文本使用简体中文。
 
-已中文化范围：
+只改：
 
 ```text
 matt/arch/SKILL.md
 matt/arch/HTML-REPORT.md
-matt/arch/DEEPENING.md
-matt/arch/INTERFACE-DESIGN.md
 ```
 
-功能点：
+不改：
 
-- HTML 报告标题、字段名、图例、badge、候选项说明、首选建议使用中文
-- 最后的追问改成中文：`你想先展开哪一个候选项？`
-- 推荐强度改成 `强烈建议`、`值得探索`、`偏推测`
-- 架构术语首次出现可保留英文括注，例如 `模块（module）`
-- 文件路径、代码标识符、API 名称、配置键、ADR 编号保留原文
+```text
+matt/arch/DEEPENING.md
+matt/arch/INTERFACE-DESIGN.md
+matt/arch/LANGUAGE.md
+```
+
+保留：
+
+- Agent/sub-agent 流程
+- 上游判断标准和架构词汇
+- 文件路径、代码标识符、API 名称、配置键、ADR 编号和第三方产品名原文
 
 ## 未修改
 
