@@ -15,12 +15,18 @@
 - 本仓库来源名：`matt`
 - 上游原版：`upstream/matt/skills/...`
 - 自定义发布版：`matt/<skill>/...`
+- 上游：`vercel-labs/skills`
+- 本仓库来源名：`vercel-labs`
+- 上游原版：`upstream/vercel-labs/skills/...`
+- 自定义发布版：`vercel-labs/<skill>/...`
 
 ## 目录
 
 ```text
 upstream/matt/skills/... # mattpocock/skills 原版；用于对照和合并上游更新
 matt/<skill>/...         # 自定义发布版；从这里安装
+upstream/vercel-labs/skills/... # vercel-labs/skills 原版；用于对照和合并上游更新
+vercel-labs/<skill>/...         # 自定义发布版；从这里安装
 ```
 
 规则：
@@ -28,8 +34,11 @@ matt/<skill>/...         # 自定义发布版；从这里安装
 - 一个上游仓库对应两个目录：`upstream/<source>/...` 和 `<source>/...`。
 - `upstream/matt/...` 不直接发布，只用于保存上游原版。
 - `matt/...` 是发布版，可以改。
+- `upstream/vercel-labs/...` 不直接发布，只用于保存上游原版。
+- `vercel-labs/...` 是发布版；当前 `find-skills` 不做修改，必须保持和上游原版一致。
 - 单个 skill 用 GitHub tree 子目录 URL 安装。
 - 添加、更新、删除都使用 `npx skills@latest`。
+- 提交 skill 布局变更前必须运行 `scripts/validate-skill-layout.sh`。
 
 补充文档：
 
@@ -179,6 +188,7 @@ npx skills@latest add https://github.com/wangxiao20241123-del/skills/tree/main/a
 
 ```bash
 git add upstream matt README.md NOTICE.md
+scripts/validate-skill-layout.sh
 git commit -m "organize skills by upstream source"
 git push
 ```
