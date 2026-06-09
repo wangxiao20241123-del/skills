@@ -9,5 +9,13 @@
   - 上游许可证：MIT
   - 上游原版路径：`upstream/matt/skills/...`
   - 自定义发布路径：`matt/<skill>/...`
+- `vercel-labs/`
+  - 上游仓库：`https://github.com/vercel-labs/skills`
+  - 上游原版路径：`upstream/vercel-labs/skills/...`
+  - 自定义发布路径：`vercel-labs/<skill>/...`
+- `softaworks/`
+  - 上游仓库：`https://github.com/softaworks/agent-toolkit`
+  - 上游原版路径：`upstream/softaworks/agent-toolkit/skills/...`
+  - 自定义发布路径：`softaworks/<skill>/...`
 
 安装、更新、删除使用 `npx skills@latest`。
